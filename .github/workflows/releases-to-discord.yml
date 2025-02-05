@@ -1,0 +1,17 @@
+oon:
+  release:
+    types: [published]
+
+jobs:
+  github-releases-to-discord:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: AoR Update and Changes
+        uses: sillyangel/releases-to-discord@v1.0.0
+        with:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          color: "2105893"
+          username: "Release Changelog"
+          avatar_url: "imgur.com/UkZIzck.jpg"
